@@ -528,7 +528,7 @@ fn operation_frames<'a, 'b: 'a>(
         //   read operation's last byte (before write or end of entire transaction) to indicate last
         //   byte read and release the bus for transmission of the bus master's next byte (or stop).
         //
-        // We check the third property unconditionally, i.e. even for write opeartions. This is okay
+        // We check the third property unconditionally, i.e. even for write operations. This is okay
         // because the resulting frame options are identical for write operations.
         let frame = match (first_frame, next_op) {
             (true, None) => FrameOptions::FirstAndLastFrame,
